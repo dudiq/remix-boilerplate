@@ -1,27 +1,25 @@
-# Remix
+# Remix Turborepo Vercel
 
-This directory is a brief example of a [Remix](https://remix.run/docs) site that can be deployed to Vercel with zero configuration.
+Example of setting up a Remix app that will be deployed to Vercel from inside a Turborepo monorepo.
 
-## Deploy Your Own
+## Preview
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/remix&template=remix)
+Open this example on [CodeSandbox](https://codesandbox.com):
 
-_Live Example: https://remix-run-template.vercel.app_
+<!-- TODO: update this link to the path for your example: -->
 
-## Development
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/remix-run/remix/tree/main/examples/turborepo-vercel)
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+## Example
 
-```sh
-npm install
-```
+What makes this different from deploying a normal remix app to Vercel,
+is that Vercel doesn't include files from the root `node_modules` when deploying the app.
+In order to work around this, we take the server build output from `remix` and
+bundle it using `rollup` so that all the necessary dependencies are present when deployed.
 
-Afterwards, start the Remix development server like so:
+Another important thing to note is that the `ui` package needs to be built.
+Many turborepo examples don't build the `ui` package, but if we don't, remix is not able to use it.
 
-```sh
-npm run dev
-```
+In order for this to work, your Vercel config should look like this:
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+![Vercel project config](./vercel-project-config-example.jpg)

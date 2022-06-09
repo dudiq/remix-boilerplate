@@ -1,7 +1,11 @@
 node_modules
-
-.cache
+build
+dist
+.turbo
 .vercel
-
-public/build
-api/_build
+.cache
+.env
+.output
+apps/**/public/build
+apps/**/api/index.js
+apps/**/api/index.js.map
