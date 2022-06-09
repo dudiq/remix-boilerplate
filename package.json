@@ -1,7 +1,6 @@
 {
   "name": "remix-example-turborepo-vercel",
   "private": true,
-  "packageManager": "pnpm@7.0.0-rc.3",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -15,7 +14,7 @@
   },
   "dependencies": {
     "prettier": "^2.6.2",
-    "turbo": "^1.2.5"
+    "turbo": "^1.2.16"
   },
   "engines": {
     "node": ">=14.0.0",
